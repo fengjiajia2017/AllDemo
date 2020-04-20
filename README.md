@@ -35,3 +35,13 @@
 ## 15，打tags
   maven tags插件，版本变动
 ## 16，docker compose自动化部署
+
+## 17, 使用Rancher搭建Demo环境
+
+## 18, 限流，熔断，降级demo搭建
+    jmeter
+
+## 19，线程、线程池、锁、并发库Demo
+
+## 20，BIO、NIO、多路复用Demo
+    TCP、HTTP、HTTPS

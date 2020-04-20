@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<script lang="javascript">
+  function submitLogin() {
+    var data = {
+      "userName": $("#userName").val(),
+      "password": $("#password").val()
+    };
+    console.log(data);
+    $.ajax({
+      type: "POST",
+      url: "/user/login",
+      contentType: "application/json;charset=utf-8",
+      dataType: "json",
+      data: JSON.stringify(data),
+      success:function (response) {
+        alert(JSON.stringify(response));
+        if (response.state==1) {
+          location.href="UserList.html"
+        }
+      },
+      error:function (response) {
+        alert(JSON.stringify(response));
+      }
+    });
+  }
+</script>
+<body>
+<h2 style="width: 400px; margin: 20px auto;">登录页面</h2>
+<div style="width: 400px; margin: 0 auto;">
+    <form>
+        <div class="form-group">
+            <label for="userName">用户名</label>
+            <input type="text" class="form-control" id="userName"
+                   placeholder="请输入用户名">
+        </div>
+        <div class="form-group">
+            <label for="password">密码</label>
+            <input type="text" class="form-control" id="password"
+                   placeholder="请输入密码">
+        </div>
+    </form>
+    <button onclick="submitLogin();" class="btn btn-default">登录</button>
+</div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户管理</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet"href="https://unpkg.com/bootstrap-table@1.15.3/dist/bootstrap-table.min.css">
+    <script src="https://unpkg.com/bootstrap-table@1.15.3/dist/bootstrap-table.min.js"></script>
+</head>
+<script lang="javascript">
+  window.onload = function () {
+    $.ajax({
+      type: "POST",
+      url: "/user/query",
+      contentType: "application/json;charset=utf-8",
+      dataType: "json",
+      data: JSON.stringify({}),
+      success: function (response) {
+        $("#table").bootstrapTable({
+          columns: [
+            {
+              field: 'id',
+              title: 'ID'
+            },
+            {
+              field: 'userName',
+              title: '用户名'
+            },
+            {
+              field: 'password',
+              title: '密码'
+            },
+            {
+              field: 'remark',
+              title: '说明'
+            }
+          ],
+          data: response,
+        });
+      },
+      error: function (response) {
+        alert(JSON.stringify(response));
+      }
+    });
+  }
+</script>
+<body>
+<h2 style="width: 400px; margin: 20px auto;">用户管理</h2>
+<div style="width: 400px; margin: 0 auto;">
+    <table class="table table-striped" id="table" data-height="600">
+        <!--在此处填充表格数据-->
+    </table>
+</div>
+</body>
+</html>

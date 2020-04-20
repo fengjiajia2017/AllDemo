@@ -1,0 +1,30 @@
+
+### 添加用户
+POST {{baseUrl}}/user/addUser
+Content-Type: application/json
+
+{
+    "userName": "fjj4",
+    "password": "4444",
+    "remark": "用户fjj4"
+}
+
+
+### 用户登录
+POST {{baseUrl}}/user/login
+Content-Type: application/json
+
+{
+    "userName": "fjj",
+    "password": "1111"
+}
+
+### 用户列表查询
+POST {{baseUrl}}/user/query
+Content-Type: application/json
+
+{}
+
+###
+
+
