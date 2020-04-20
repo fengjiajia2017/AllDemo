@@ -2,7 +2,7 @@
 建立demo工程，对工作和学习中一些技术间进行学习和总结
 ## [1，springboot基础工程-HelloWorld](./demo1/README.md)
   rest full, hello world
-## 2，用户管理：注册、登录、列表显示
+## [2，用户管理：注册、登录、列表显示](./demo2/README.md)
   js框架选型，html编写，druid连接池，mybatis，功能增删改查，部署到centos
   centos虚拟机搭建、安装mysql、jdk环境
 ## 3，自动化部署环境搭建
