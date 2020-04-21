@@ -9,8 +9,8 @@
     <description>all demo</description>
 
     <modules>
-        <module>./demo1</module>
-        <module>./demo2</module>
+        <module>./demo1-helloworld</module>
+        <module>./demo2-usermanager</module>
     </modules>
 
 </project>
